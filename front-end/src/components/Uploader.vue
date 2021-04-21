@@ -49,7 +49,6 @@
                 @input="fileChanged"
               />
             </div>
-            <p v-if="error" class="error">{{ error }}</p>
           </fieldset>
           <fieldset class="buttons">
             <button type="button" @click="close" class="pure-button">
@@ -83,7 +82,6 @@ export default {
       description: "",
       url: "",
       file: null,
-      error: "",
     };
   },
   methods: {
@@ -118,7 +116,7 @@ export default {
         this.description = "";
         this.$emit("uploadFinished");
       } catch (error) {
-        this.error = "Error: " + error.response.data.message;
+        console.log(error);
       }
     },
   },
