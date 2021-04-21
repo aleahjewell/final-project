@@ -103,7 +103,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // edit pet
-router.put("/:id", async (req, res) => {
+router.put("/:id", validUser, async (req, res) => {
     try {
         let pet = await Pet.findOne({ _id: req.params.id }).populate('user');
         pet.name = req.body.name;
@@ -121,7 +121,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // delete pet 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validUser, async (req, res) => {
     try {
         let pet = await (await Pet.findOne({ _id: req.params.id })).populate('user');
         if (!pet) {

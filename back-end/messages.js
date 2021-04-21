@@ -53,7 +53,7 @@ router.post("/:id", validUser, async (req, res) => {
 });
 
 // get list of messages
-router.get("/:id", async (req, res) => {
+router.get("/:id", validUser, async (req, res) => {
     try {
         let user = await User.findOne({ _id: req.params.id });
 
@@ -70,7 +70,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // delete message
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validUser, async (req, res) => {
     try {
         let message = await Message.findOne({ _id: req.params.id });
         if (!message) {
