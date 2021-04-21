@@ -7,7 +7,7 @@
       </div>
       <div class="footer">
         <a href="https://github.com/aleahjewell/final-project">
-          GitHub Repository ~10 hours
+          GitHub Repository ~10-15 hours idk I lost track
         </a>
       </div>
     </div>
