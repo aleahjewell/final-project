@@ -111,7 +111,7 @@ router.put("/:id", async (req, res) => {
         pet.sex = req.body.sex;
         pet.age = req.body.age;
         pet.breed = req.body.breed;
-        pet.descriptoin = req.body.description;
+        pet.description = req.body.description;
         await pet.save();
         return res.send(pet);
     } catch (error) {
